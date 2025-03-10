@@ -31,6 +31,9 @@
                 "input": "public"
               }
             ],
+            "stylePreprocessorOptions": {
+              "includePaths": ["src"]
+            },
             "styles": [
               "src/styles.scss"
             ],
@@ -55,7 +58,8 @@
                   "maximumError": "8kB"
                 }
               ],
-              "outputHashing": "all"
+              "outputHashing": "all",
+              "optimization": true
             },
             "development": {
               "optimization": false,
@@ -103,5 +107,8 @@
         }
       }
     }
+  },
+  "cli": {
+    "analytics": "a2304c3b-ea80-4111-8855-33bd820ffe9f"
   }
 }

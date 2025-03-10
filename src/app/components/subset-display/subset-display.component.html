@@ -1,0 +1,17 @@
+<div class="subsets-container">
+    <h2>Valid Subsets</h2>
+    
+    <div *ngIf="subsets.length === 0" class="no-subsets">
+      No valid subsets found. Enter numbers and target sum to find subsets.
+    </div>
+    
+    <div *ngIf="subsets.length > 0" class="subsets-grid">
+      <div *ngFor="let subset of subsets; let i = index" 
+           class="subset-card">
+        <div class="subset-title">Subset #{{ i + 1 }}</div>
+        <div class="subset-elements">
+          [{{ subset.elements.join(', ') }}] = {{ subset.sum }}
+        </div>
+      </div>
+    </div>
+  </div>

@@ -1,0 +1,50 @@
+<div class="visualization-container">
+    <h2>State Space Tree Visualization</h2>
+    
+    <div class="control-buttons">
+      <button 
+        (click)="startAnimation()" 
+        [disabled]="isAnimating"
+        class="btn btn-primary">
+        Play
+      </button>
+      <button 
+        (click)="pauseAnimation()" 
+        [disabled]="!isAnimating"
+        class="btn btn-secondary">
+        Pause
+      </button>
+      <button 
+        (click)="stepBackward()" 
+        [disabled]="currentStepIndex <= 0"
+        class="btn btn-secondary">
+        ⬅️ Step
+      </button>
+      <button 
+        (click)="stepForward()" 
+        [disabled]="currentStepIndex >= animationSteps.length - 1"
+        class="btn btn-secondary">
+        Step ➡️
+      </button>
+    </div>
+    
+    <div class="legend">
+      <span class="legend-item">
+        <span class="legend-box include"></span> Include element
+      </span>
+      <span class="legend-item">
+        <span class="legend-box exclude"></span> Exclude element
+      </span>
+      <span class="legend-item">
+        <span class="legend-box success"></span> Target sum reached
+      </span>
+    </div>
+    
+    <div #treeContainer class="tree-container">
+      <!-- D3 will insert SVG here -->
+    </div>
+    
+    <div *ngIf="animationSteps.length > 0" class="step-counter">
+      Step {{ currentStepIndex + 1 }} of {{ animationSteps.length }}
+    </div>
+  </div>

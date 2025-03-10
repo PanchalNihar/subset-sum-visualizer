@@ -1,0 +1,38 @@
+<div class="subset-form-container">
+    <h2>Subset Sum Finder</h2>
+    
+    <form [formGroup]="subsetForm" (ngSubmit)="onSubmit()">
+      <div class="form-group">
+        <label for="numbers">Numbers (comma or space separated)</label>
+        <input 
+          type="text" 
+          id="numbers" 
+          formControlName="numbers" 
+          placeholder="e.g., 1, 2, 3, 4, 5"
+          class="form-control">
+      </div>
+      
+      <div class="form-group">
+        <label for="target">Target Sum</label>
+        <input 
+          type="number" 
+          id="target" 
+          formControlName="target" 
+          placeholder="e.g., 7"
+          class="form-control">
+      </div>
+      
+      <div class="form-group">
+        <button 
+          type="submit" 
+          class="btn btn-primary"
+          [disabled]="subsetForm.invalid">
+          Find Subsets
+        </button>
+      </div>
+      
+      <div *ngIf="errorMessage" class="error-message">
+        {{ errorMessage }}
+      </div>
+    </form>
+  </div>

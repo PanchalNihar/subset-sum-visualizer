@@ -1,0 +1,51 @@
+/* subset-display.component.scss */
+
+.subsets-container {
+    margin-top: 2rem;
+    padding: 1.5rem;
+    background-color: #fff;
+    border-radius: 0.25rem;
+    box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
+  }
+  
+  h2 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+  }
+  
+  .no-subsets {
+    color: #6c757d;
+  }
+  
+  .subsets-grid {
+    display: flex;
+    flex-wrap: wrap;
+    margin: -0.5rem;
+  }
+  
+  .subset-card {
+    flex: 0 0 calc(33.333% - 1rem);
+    margin: 0.5rem;
+    padding: 0.75rem;
+    border: 1px solid #b8e0c9;
+    border-radius: 0.25rem;
+    background-color: #ebf8ee;
+    
+    @media (max-width: 991px) {
+      flex: 0 0 calc(50% - 1rem);
+    }
+    
+    @media (max-width: 767px) {
+      flex: 0 0 100%;
+    }
+  }
+  
+  .subset-title {
+    font-weight: 500;
+  }
+  
+  .subset-elements {
+    margin-top: 0.25rem;
+    color: #2b7337;
+  }
